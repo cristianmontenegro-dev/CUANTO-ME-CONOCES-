@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Cuánto me conoces? | Trivia Interactiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="quiz-wrapper">
+    <!-- Tarjeta Principal -->
+    <div class="quiz-card" id="quizCard">
+      
+      <!-- Header con Marcadores en Vivo -->
+      <header class="quiz-header">
+        <div class="score-pills">
+          <span class="pill pill-correct" title="Aciertos">
+            ✓ <strong id="correctCount">0</strong>
+          </span>
+          <span class="pill pill-incorrect" title="Intentos fallidos">
+            ✕ <strong id="incorrectCount">0</strong>
+          </span>
+        </div>
+        <span class="step-indicator" id="stepIndicator">Pregunta 1 de 4</span>
+      </header>
+
+      <!-- Barra de Progreso -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <!-- Pantalla de Juego Activo -->
+      <section class="quiz-body" id="gameScreen">
+        <span class="badge-tag">¿CUÁNTO ME CONOCES?</span>
+        <h1 class="question-title" id="questionText">Cargando pregunta...</h1>
+        <p class="question-hint">Selecciona la opción correcta para avanzar al siguiente nivel.</p>
+
+        <!-- Grid de Opciones -->
+        <div class="options-grid" id="optionsGrid">
+          <!-- Botones generados dinámicamente por JS -->
+        </div>
+
+        <!-- Mensaje de Retroalimentación (Feedback) -->
+        <div class="feedback-banner" id="feedbackBanner" aria-live="polite"></div>
+      </section>
+
+      <!-- Pantalla Final de Resultados -->
+      <section class="result-screen hidden" id="resultScreen">
+        <div class="trophy-icon" id="resultEmoji">🏆</div>
+        <h2 class="result-title" id="resultTitle">¡Lo lograste!</h2>
+        <p class="result-subtitle" id="resultMessage">Completaste todo el reto sobre Cristian.</p>
+
+        <div class="stats-summary">
+          <div class="stat-box">
+            <span class="stat-number correct-text" id="finalCorrect">4</span>
+            <span class="stat-label">Aciertos</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number incorrect-text" id="finalIncorrect">0</span>
+            <span class="stat-label">Fallos</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number accent-text" id="finalPrecision">100%</span>
+            <span class="stat-label">Precisión</span>
+          </div>
+        </div>
+
+        <button class="btn-restart" id="restartBtn">Jugar de nuevo ↻</button>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
